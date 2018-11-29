@@ -1,12 +1,15 @@
 // miniprogram/pages/report/report.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    title: [],
 
   },
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -26,41 +29,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getData()
 
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  getData: function () {
+    const db = wx.cloud.database()
+    db.collection('report').get({
+      success: res => {
+        this.setData({
+          title: res.data
+        })
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '查询记录失败'
+        })
+        console.error('[数据库] [查询记录] 失败：', err)
+      }
+    })
   }
+
 })

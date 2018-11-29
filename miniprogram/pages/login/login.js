@@ -20,7 +20,7 @@ Page({
   onLoad: function (options) {
     if (!wx.cloud) {
       wx.redirectTo({
-        url: '../chooseLib/chooseLib',
+        url: '../topics/topics',
       })
       return
     }
@@ -71,7 +71,7 @@ Page({
   },
   report: function () {
     wx.navigateTo({
-      url: '/pages/report/report'
+      url: '/pages/writereport/writereport'
     })
   },
   onGetUserInfo: function (e) {

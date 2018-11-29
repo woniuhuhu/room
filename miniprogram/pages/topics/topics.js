@@ -7,18 +7,18 @@ var navList = [{
     id: "zb",
     title: "战报"
   },
-  {
-    id: "ssb",
-    title: "射手榜"
-  },
-  {
-    id: "mvp",
-    title: "MVP榜"
-  },
-  {
-    id: "zgb",
-    title: "助攻榜"
-  }
+  // {
+  //   id: "ssb",
+  //   title: "排行榜"
+  // },
+  // {
+  //   id: "mvp",
+  //   title: "图片秀"
+  // },
+  // {
+  //   id: "zgb",
+  //   title: "讨论区"
+  // }
 ];
 
 Page({
@@ -32,6 +32,9 @@ Page({
   },
   onShow: function () {
     this.getData();
+    this.setData({
+      activeIndex: 0,
+    })
   },
 
   onLoad: function (options) {
@@ -51,10 +54,23 @@ Page({
       tab: tab,
       page: 1
     });
-    if (tab !== 'gg') {
-
-    } else {
-
+    if (tab == 'zb') {
+      wx.navigateTo({
+        url: '/pages/report/report'
+      })
+    } else if(tab == 'ssb'){
+      wx.navigateTo({
+        url: '/pages/ssb/ssb'
+      })
+    } else if (tab == 'mvp') {
+      wx.navigateTo({
+        url: '/pages/img/img'
+      })
+      
+    } else if (tab == 'zgb') {
+      wx.navigateTo({
+        url: '/pages/discuss/discuss'
+      })
     }
   },
   getData: function () {

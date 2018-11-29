@@ -4,7 +4,12 @@
     "pages/login/login",
     "pages/door/door",
     "pages/notice/notice",
-    "pages/report/report"
+    "pages/report/report",
+    "pages/writereport/writereport",
+    "pages/ssb/ssb",
+    "pages/img/img",
+    "pages/discuss/discuss",
+    "pages/reportcontent/reportcontent"
   ],
   "window": {
     "backgroundColor": "#fff",

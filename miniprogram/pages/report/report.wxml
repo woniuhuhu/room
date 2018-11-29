@@ -1,2 +1,12 @@
 <!--miniprogram/pages/report/report.wxml-->
-<text>这个还没有做完，下星期再搞这个~~</text>
+
+<view class="weui-cells__title">2018年战报列表</view>
+<template name="title">
+<view wx:for="{{title}}" class="weui-cells weui-cells_after-title">
+  <navigator url="/pages/reportcontent/reportcontent?title={{item.title}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">{{item.title}}</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
+</template>
+<template is="title" data="{{title}}"/>

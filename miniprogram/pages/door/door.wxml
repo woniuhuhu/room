@@ -18,6 +18,6 @@
         </view>
         <button form-type="submit" class="weui-btn" type="primary">报名吧</button>
     </form>
-    <button  class="weui-btn" type="warn" bindtap="giveup">取消报名,找老卞足疗去</button>
+    <button  class="weui-btn" type="warn" bindtap="giveup">取消报名</button>
     <button  class="weui-btn" type="warn" bindtap="clear">清空报名(除了龚队，其他人慎点)</button>
 </view>

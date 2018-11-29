@@ -1,0 +1,21 @@
+<!--miniprogram/pages/writereport/writereport.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="weui-cells__title">请输入战报标题</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__bd">
+        <input name="title" class="weui-input" placeholder="写个燃一点的标题" />
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells__title">正文</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea name="content" class="weui-textarea" placeholder="开写！！！，文章后面记得写上自己的名字哦，不然不知道谁写的~" style="height: 3.3em" />
+        <view class="weui-textarea-counter">0/200</view>
+      </view>
+    </view>
+  </view>
+  <button form-type="submit" class="weui-btn" type="primary">提交</button>
+</form>
