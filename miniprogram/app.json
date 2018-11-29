@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/topics/topics",
+    "pages/login/login",
+    "pages/door/door",
+    "pages/notice/notice",
+    "pages/report/report"
+  ],
+  "window": {
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#444",
+    "navigationBarTitleText": "战旗football",
+    "navigationBarTextStyle": "white",
+    "debug": true
+  },
+  "tabBar": {
+    "color": "#444",
+    "selectedColor": "#80bd01",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/topics/topics",
+        "text": "首页",
+        "iconPath": "images/bar/CNode.png",
+        "selectedIconPath": "images/bar/CNodeHL.png"
+      },
+      {
+        "pagePath": "pages/login/login",
+        "text": "我的",
+        "iconPath": "images/bar/ME.png",
+        "selectedIconPath": "images/bar/MEHL.png"
+      }
+    ]
+  }
+}

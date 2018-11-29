@@ -1,0 +1,24 @@
+<!-- topics.wxml  -->
+<import src="../common/nav.wxml" />
+<template name="apply">
+    <block wx:if="{{apply.length==0?false:true}}">
+    <view class="biaoti">参赛人员</view>
+    </block>
+    <block wx:for="{{apply}}" wx:key="">
+      <view>姓名:  {{item.name}}   位置:{{item.location}}</view>
+    </block>
+</template>
+<view class="page topics">
+  <template is="nav" data="{{ navList, activeIndex }}" />
+</view>
+<view class="biaoti">{{notice.biaohao}}</view>
+<view class="weui-article__section">
+  <view class="weui-article__p">
+    {{notice.content}}
+  </view>
+</view>
+<view class="date">{{date}}</view>
+<view class="page topics">
+  <template is="apply" data="{{ apply }}" />
+</view>
+

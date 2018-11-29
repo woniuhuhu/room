@@ -1,0 +1,33 @@
+@import "../../weui.wxss";
+
+.biaoti {
+  font-weight: bold;
+  text-align: center;
+  color: red;
+}
+.date {
+  text-align: right;
+}
+
+/*导航 nav*/
+
+.top-bar {
+  height: 72rpx;
+  background: #444;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.top-bar-item {
+  display: inline-block;
+  width: 150rpx;
+  color: #80bd01;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.top-bar-active {
+  color: #fff;
+  font-size: 32rpx;
+}
