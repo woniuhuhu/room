@@ -5,10 +5,16 @@
   <view class="btn">
     <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="apply">报名参赛</button>
   </view>
+  
   <view class="btn1">
     <button class="weui-btn" bindtap="notice" type="primary">发布公告</button>
+    
     <button class="weui-btn" bindtap="report" type="primary">写战报</button>
     <!-- <button class="weui-btn" type="primary">修改战报</button> -->
+    <view class="view"></view>
+    <form  report-submit="{{true}}" bindsubmit='onsubmit' >
+          <button class="weui-btn" type="primary" form-type="submit">点我可以接收公告跟新的推送</button>
+    </form>
     <text>说明一下,为了方便使用，取消了注册登陆，也就意味着谁都能用，所以这个小程序就是队内使用，外人乱搞会污染数据库，祝战旗兄弟们心想事成~~</text>
   </view>
 </view>

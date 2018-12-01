@@ -10,7 +10,9 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    openid: ''
+
 
   },
 
@@ -25,7 +27,7 @@ Page({
       return
     }
     //onGetOpenid()
-    
+
 
     // 获取用户信息
     wx.getSetting({
@@ -34,6 +36,7 @@ Page({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              console.log('哈哈', res)
               this.setData({
                 avatarUrl: res.userInfo.avatarUrl,
                 userInfo: res.userInfo
@@ -52,12 +55,43 @@ Page({
       data: {},
       success: res => {
         console.log('[云函数] [login] user openid: ', res.result.openid)
-        app.globalData.openid = res.result.openid
+        this.data.openid = res.result.openid
       },
       fail: err => {
         console.error('[云函数] [login] 调用失败', err)
       }
     })
+  },
+  onsubmit: function (e) {
+    console.log('haha', this.data.openid, '啦啦', e.detail.formId)
+    const db = wx.cloud.database()
+    db.collection('from_id').doc(this.data.openid).set({
+      data: {
+        from_id: e.detail.formId
+      }
+    })
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'formid',
+      // 传给云函数的参数
+      data: {
+        from_id: e.detail.formId
+      },
+    })
+    .then(res => {
+      console.log(res.result) // 3
+    })
+    .catch(console.error)
+    // wx.cloud.callFunction({
+    //   name: 'formid',
+    //   data: e.detail,
+    //   success: res => {
+    //     console.log('姜辉',res)
+    //   },
+    //   fail: err => {
+    //     console.log("哈哈",err)
+    //   }     
+    // })
   },
   apply: function () {
     wx.navigateTo({

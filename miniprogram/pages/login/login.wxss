@@ -1,5 +1,8 @@
 /**index.wxss**/
 @import "../../weui.wxss";
+.view{
+  height: 42rpx;
+}
 .btn{
   position:fixed;
   top: 85rpx;
