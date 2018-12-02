@@ -19,6 +19,7 @@
     "navigationBarTextStyle": "white",
     "debug": true
   },
+  "cloud": true,
   "tabBar": {
     "color": "#444",
     "selectedColor": "#80bd01",

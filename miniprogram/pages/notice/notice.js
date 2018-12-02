@@ -30,12 +30,29 @@ Page({
         wx.showToast({
           title: '提交完毕',
         })
-        wx.navigateBack({
-          delta: 1
-        })
+        // wx.navigateBack({
+        //   delta: 1
+        // })
       },
       fail: console.error
     })
+    const db = wx.cloud.database()
+    db.collection('from_id').get()
+      .then(res => {
+        console.log('姜辉', res.data)
+        for (var i = 0; i < res.data.length; i++){
+          wx.cloud.callFunction({
+            name: 'formid',
+            data: {
+              openId: res.data[i]._openid,
+              from_id:res.data[i].from_id
+            },
+            success: function (res) {
+              console.log(i,'我是华丽的分割线',res)
+            }            
+          })
+        }
+      })
   },
 
   /**

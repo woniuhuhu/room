@@ -70,18 +70,21 @@ Page({
         from_id: e.detail.formId
       }
     })
-    wx.cloud.callFunction({
-      // 云函数名称
-      name: 'formid',
-      // 传给云函数的参数
-      data: {
-        from_id: e.detail.formId
-      },
+    wx.showToast({
+      title: '静候战旗召唤'
     })
-    .then(res => {
-      console.log(res.result) // 3
-    })
-    .catch(console.error)
+    // wx.cloud.callFunction({
+    //   // 云函数名称
+    //   name: 'formid',
+    //   // 传给云函数的参数
+    //   data: {
+    //     from_id: e.detail.formId
+    //   },
+    // })
+    // .then(res => {
+    //   console.log('云函数执行成功的返回',res.result) // 3
+    // })
+    // .catch(console.error)
     // wx.cloud.callFunction({
     //   name: 'formid',
     //   data: e.detail,

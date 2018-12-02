@@ -13,7 +13,7 @@
     <!-- <button class="weui-btn" type="primary">修改战报</button> -->
     <view class="view"></view>
     <form  report-submit="{{true}}" bindsubmit='onsubmit' >
-          <button class="weui-btn" type="primary" form-type="submit">点我可以接收公告跟新的推送</button>
+          <button class="weui-btn" type="primary" form-type="submit">点我一下，如果公告更新，会接到消息提醒</button>
     </form>
     <text>说明一下,为了方便使用，取消了注册登陆，也就意味着谁都能用，所以这个小程序就是队内使用，外人乱搞会污染数据库，祝战旗兄弟们心想事成~~</text>
   </view>

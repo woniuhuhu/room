@@ -24,7 +24,7 @@ exports.main = async (event, context) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      touser: event.userInfo.openId,
+      touser: event.openId,
       template_id: temp_id,
       page: 'pages/topics/topics',
       form_id: event.from_id,
@@ -44,9 +44,5 @@ exports.main = async (event, context) => {
   //   .then(res => {
   //     console.log('姜辉', res.data)
   //   })
-
-}
-
-
 
 }
