@@ -37,10 +37,14 @@ Page({
           wx.getUserInfo({
             success: res => {
               console.log('哈哈', res)
-              this.setData({
-                avatarUrl: res.userInfo.avatarUrl,
-                userInfo: res.userInfo
-              })
+              if (!this.logged) {
+                //console.log("啦啦啦，我是买包的小行家")
+                this.setData({
+                  avatarUrl: res.userInfo.avatarUrl,
+                  userInfo: res.userInfo,
+                  logged:true,
+                })
+              }
             }
           })
         }
@@ -111,16 +115,16 @@ Page({
       url: '/pages/writereport/writereport'
     })
   },
-  onGetUserInfo: function (e) {
-    if (!this.logged && e.detail.userInfo) {
-      this.setData({
-        logged: true,
-        avatarUrl: e.detail.userInfo.avatarUrl,
-        userInfo: e.detail.userInfo
-      })
-    }
+  // onGetUserInfo: function (e) {
+  //   if (!this.logged && e.detail.userInfo) {
+  //     this.setData({
+  //       logged: true,
+  //       avatarUrl: e.detail.userInfo.avatarUrl,
+  //       userInfo: e.detail.userInfo
+  //     })
+  //   }
 
-  },
+  // },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

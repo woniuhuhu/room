@@ -28,7 +28,8 @@ Page({
     tab: 'gg',
     notice: null,
     date: null,
-    apply: []
+    apply: [],
+    counts: 0
   },
   onShow: function () {
     this.getData();
@@ -58,7 +59,7 @@ Page({
       wx.navigateTo({
         url: '/pages/report/report'
       })
-    } else if(tab == 'ssb'){
+    } else if (tab == 'ssb') {
       wx.navigateTo({
         url: '/pages/ssb/ssb'
       })
@@ -66,7 +67,7 @@ Page({
       wx.navigateTo({
         url: '/pages/img/img'
       })
-      
+
     } else if (tab == 'zgb') {
       wx.navigateTo({
         url: '/pages/discuss/discuss'
@@ -75,6 +76,8 @@ Page({
   },
   getData: function () {
     const db = wx.cloud.database()
+    let _this = this
+
     db.collection('apply').get({
       success: res => {
         this.setData({
@@ -89,7 +92,28 @@ Page({
         }
       }
     })
-    // 查询当前用户所有的 counters
+    db.collection('apply').count({
+      success: (res) => {
+        console.log(res.total)
+        this.setData({
+          counts: res.total
+        })
+        if (res.total > 20) {
+          db.collection('apply').skip(20)
+            .get()
+            .then((res) => {
+              let new_apply = this.data.apply.concat(res.data)
+              this.setData({
+                apply: new_apply
+              })
+            })
+            .catch('错误啦，叫你能', console.error)
+        }
+        console.log('哈哈', this.data.counts)
+
+      }
+    })
+
     db.collection('notice').get({
       success: res => {
         this.setData({

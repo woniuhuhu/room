@@ -2,7 +2,7 @@
 <import src="../common/nav.wxml" />
 <template name="apply">
     <block wx:if="{{apply.length==0?false:true}}">
-    <view class="biaoti">参赛人员</view>
+    <view class="biaoti">参赛人员~{{counts}}人~</view>
     </block>
     <block wx:for="{{apply}}" wx:key="">
       <view>姓名:  {{item.name}}   位置:{{item.location}}</view>
@@ -19,6 +19,6 @@
 </view>
 <view class="date">{{date}}</view>
 <view class="page topics">
-  <template is="apply" data="{{ apply }}" />
+  <template is="apply" data="{{ apply,counts }}" />
 </view>
 

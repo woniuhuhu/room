@@ -9,6 +9,9 @@ App({
         traceUser: true,
       })
     }
+    
+    const updateManager = wx.getUpdateManager();
+    updateManager.onUpdateReady((res)=>{console.log(res)})
 
     this.globalData = {}
   }

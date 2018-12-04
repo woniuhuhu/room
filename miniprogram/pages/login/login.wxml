@@ -1,6 +1,6 @@
 <!-- 用户 openid -->
 <view class="userinfo">
-  <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
+  <button open-type="getUserInfo"  class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
   <view>{{userInfo.nickName}}</view>
   <view class="btn">
     <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="apply">报名参赛</button>
