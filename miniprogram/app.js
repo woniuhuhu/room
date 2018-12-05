@@ -9,9 +9,12 @@ App({
         traceUser: true,
       })
     }
+    wx.showShareMenu({
+      withShareTicket: true
+    })
     
     const updateManager = wx.getUpdateManager();
-    updateManager.onUpdateReady((res)=>{console.log(res)})
+    updateManager.onUpdateReady((res) => { console.log(res) })
 
     this.globalData = {}
   }

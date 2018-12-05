@@ -27,6 +27,9 @@ Page({
       return
     }
     //onGetOpenid()
+    wx.showShareMenu({
+      withShareTicket: true
+    })
 
 
     // 获取用户信息

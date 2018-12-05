@@ -7,10 +7,10 @@ var navList = [{
     id: "zb",
     title: "战报"
   },
-  // {
-  //   id: "ssb",
-  //   title: "排行榜"
-  // },
+   {
+     id: "ssb",
+     title: "英雄榜"
+   },
   // {
   //   id: "mvp",
   //   title: "图片秀"

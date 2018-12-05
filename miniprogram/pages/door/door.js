@@ -1,5 +1,5 @@
 // miniprogram/pages/door/door.js
-const app = getApp()
+//const app = getApp()
 Page({
 
   /**
@@ -16,7 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.globalData.openid)
+    //console.log(app.globalData.openid)
   },
   formSubmit: function (e) {
     e.detail.value.done=true
@@ -38,7 +38,7 @@ Page({
       })
       }
     })
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+   // console.log('form发生了submit事件，携带数据为：', e.detail.value)
   },
   giveup: function () {
     wx.cloud.callFunction({
@@ -117,12 +117,6 @@ Page({
    */
   onReachBottom: function () {
 
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
+
 })
